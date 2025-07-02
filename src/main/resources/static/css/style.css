@@ -1,7 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
+
 body {
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-    background-color: #f8f9fa;
-    color: #212529;
+    font-family: 'Roboto', sans-serif;
+    background-color: #1a1a1d;
+    color: #f5f5f5;
     margin: 0;
     padding: 20px;
 }
@@ -9,118 +11,123 @@ body {
 .container {
     max-width: 1140px;
     margin: 0 auto;
-    background: #ffffff;
+    background: #2c2f33;
     padding: 25px 40px;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+    border: 1px solid #3a6b35;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    clip-path: polygon(0 20px, 20px 0, calc(100% - 20px) 0, 100% 20px, 100% calc(100% - 20px), calc(100% - 20px) 100%, 20px 100%, 0 calc(100% - 20px));
 }
 
 h1 {
-    color: #343a40;
-    border-bottom: 2px solid #007bff;
-    padding-bottom: 10px;
-    margin-bottom: 20px;
+    color: #ffffff;
+    border-bottom: 2px solid #2E8B57;
+    padding-bottom: 15px;
+    margin-bottom: 25px;
+    font-weight: 700;
 }
 
 .styled-table {
     border-collapse: collapse;
     margin: 25px 0;
-    font-size: 0.9em;
+    font-size: 1em;
     width: 100%;
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
-    border-radius: 8px;
+    box-shadow: none;
     overflow: hidden;
 }
 
 .styled-table thead tr {
-    background-color: #007bff;
+    background-color: #2E8B57;
     color: #ffffff;
     text-align: left;
-    font-weight: bold;
+    font-weight: 500;
 }
 
 .styled-table th,
 .styled-table td {
-    padding: 12px 15px;
+    padding: 15px 18px;
     text-align: left;
 }
 
 .styled-table tbody tr {
-    border-bottom: 1px solid #dddddd;
+    border-bottom: 1px solid #4f545c;
+    transition: background-color 0.3s ease;
 }
 
 .styled-table tbody tr:nth-of-type(even) {
-    background-color: #f3f3f3;
+    background-color: #23272a;
 }
 
 .styled-table tbody tr:last-of-type {
-    border-bottom: 2px solid #007bff;
+    border-bottom: none;
 }
 
 .styled-table tbody tr:hover {
-    background-color: #f1f1f1;
+    background-color: #36393f;
 }
 
 .btn {
     display: inline-block;
-    padding: 10px 20px;
+    padding: 12px 28px;
     border: none;
-    border-radius: 5px;
     color: white;
     text-decoration: none;
     text-align: center;
     cursor: pointer;
     margin: 5px 5px 5px 0;
-    transition: background-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+    transition: all 0.3s ease;
     font-weight: 500;
+    letter-spacing: 0.5px;
+    clip-path: polygon(15% 0%, 85% 0%, 100% 50%, 85% 100%, 15% 100%, 0% 50%);
 }
 
 .btn:hover {
-    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    transform: scale(1.05);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
 }
 
-.btn-primary { background-color: #007bff; }
-.btn-primary:hover { background-color: #0069d9; }
+.btn-primary { background-color: #2E8B57; }
+.btn-primary:hover { background-color: #3CB371; }
 
-.btn-secondary { background-color: #6c757d; }
-.btn-secondary:hover { background-color: #5a6268; }
+.btn-secondary { background-color: #6f7378; }
+.btn-secondary:hover { background-color: #8e9297; }
 
-.btn-danger { background-color: #dc3545; }
-.btn-danger:hover { background-color: #c82333; }
+.btn-danger { background-color: #f5a623; color: #1a1a1d; }
+.btn-danger:hover { background-color: #f7b94e; }
 
 .data-form .form-group {
-    margin-bottom: 1rem;
+    margin-bottom: 1.5rem;
 }
 
 .data-form label {
     display: block;
     margin-bottom: .5rem;
     font-weight: 500;
+    color: #b9bbbe;
 }
 
 .data-form .form-control {
     display: block;
     width: 100%;
-    padding: .375rem .75rem;
+    padding: .5rem .75rem;
     font-size: 1rem;
     line-height: 1.5;
-    color: #495057;
-    background-color: #fff;
+    color: #f5f5f5;
+    background-color: #1a1a1d;
     background-clip: padding-box;
-    border: 1px solid #ced4da;
-    border-radius: .25rem;
-    transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+    border: 1px solid #4f545c;
+    border-radius: 0;
+    transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out;
     box-sizing: border-box;
 }
 
 .data-form .form-control:focus {
-    color: #495057;
-    background-color: #fff;
-    border-color: #80bdff;
+    color: #f5f5f5;
+    background-color: #1a1a1d;
+    border-color: #2E8B57;
     outline: 0;
-    box-shadow: 0 0 0 .2rem rgba(0,123,255,.25);
+    box-shadow: 0 0 0 .2rem rgba(46, 139, 87, 0.25);
 }
 
 .data-form .form-actions {
-    margin-top: 20px;
+    margin-top: 25px;
 }

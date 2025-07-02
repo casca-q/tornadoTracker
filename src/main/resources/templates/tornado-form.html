@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title th:text="${pageTitle}">Tornado Form</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}"/>
+</head>
+<body>
+<div class="container">
+    <h1 th:text="${pageTitle}"></h1>
+    <form th:action="@{/tornadoes/save}" th:object="${tornado}" method="post" class="data-form">
+        <input type="hidden" th:field="*{id}"/>
+
+        <div class="form-group">
+            <label for="dateTime">Date & Time:</label>
+            <input type="datetime-local" id="dateTime" th:field="*{dateTime}" class="form-control" required>
+        </div>
+
+        <div class="form-group">
+            <label for="location">Location:</label>
+            <select id="location" th:field="*{locationId}" class="form-control" required>
+                <option value="">Select a location...</option>
+                <option th:each="loc : ${locations}" th:value="${loc.id}" th:text="${loc.city + ', ' + loc.country}"></option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label for="fujitaScale">Fujita Scale:</label>
+            <select id="fujitaScale" th:field="*{fujitaScale}" class="form-control" required>
+                <option value="">Select a scale...</option>
+                <option th:each="scale : ${scales}" th:value="${scale}" th:text="${scale} + ' - ' + ${scale.description}"></option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label for="damageDescription">Damage Description:</label>
+            <textarea id="damageDescription" th:field="*{damageDescription}" class="form-control" rows="4"></textarea>
+        </div>
+
+        <div class="form-actions">
+            <button type="submit" class="btn btn-primary">Save</button>
+            <a th:href="@{/tornadoes}" class="btn btn-secondary">Cancel</a>
+        </div>
+    </form>
+</div>
+</body>
+</html>
